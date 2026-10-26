@@ -75,7 +75,7 @@ def build_graph():
     graph.add_edge("respond", END)
     return graph
 
-async def chat(user_input: str, thread_id: str) -> str:
+async def chat(user_input: str, thread_id: str = "default_session") -> str:
     os.makedirs("./kb", exist_ok=True)
     async with AsyncSqliteSaver.from_conn_string("./kb/chat_memory.db") as checkpointer:
         app_graph = build_graph().compile(checkpointer=checkpointer)
