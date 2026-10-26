@@ -1,6 +1,8 @@
 import json, os, asyncio
 from typing import TypedDict, Annotated
 from dotenv import load_dotenv
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PRODUCTS_PATH = os.path.join(BASE_DIR, "data", "products.json")
 
 load_dotenv()
 
@@ -28,7 +30,9 @@ async def async_search_policy_tool(query: str) -> str:
 
 async def async_search_product_tool(query: str) -> str:
     def _search():
-        with open("./data/products.json", "r", encoding="utf-8") as f: products = json.load(f)
+        if not os.path.exists(PRODUCTS_PATH):
+                return "Catalog unavailable."
+        with open("PRODUCTS_PATH", "r", encoding="utf-8") as f: products = json.load(f)
         q = query.lower()
         if any(kw in q for kw in ["product", "catalog", "sell", "available", "list"]):
             return json.dumps(products, ensure_ascii=False, indent=2)
