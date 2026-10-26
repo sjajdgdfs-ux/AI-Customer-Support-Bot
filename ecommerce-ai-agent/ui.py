@@ -18,12 +18,12 @@ if not os.path.exists("./kb"):
 from app.agent import chat
 
 st.title("🛒 TechZone AI Support Agent")
-st.caption("Enterprise RAG & Guardrails Agent — Powered by Gemini 2.0 & LangGraph")
+st.caption("Enterprise RAG & Guardrails Agent — Powered by Gemini  & LangGraph")
 
 # Sidebar
 with st.sidebar:
     st.header("⚙️ System Status")
-    st.success("● LLM: Gemini 2.0 Flash")
+    st.success("● LLM: Gemini")
     st.success("● Vector DB: ChromaDB (Local)")
     st.success("● Guardrails: Active")
     st.markdown("---")
