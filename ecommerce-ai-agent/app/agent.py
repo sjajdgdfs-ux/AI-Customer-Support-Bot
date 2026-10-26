@@ -41,7 +41,7 @@ async def async_search_product_tool(query: str) -> str:
         return json.dumps(results or products, ensure_ascii=False, indent=2)
     return await asyncio.to_thread(_search)
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.2, max_output_tokens=512)
+llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite", temperature=0.2, max_output_tokens=512)
 shield = SecurityShield()
 
 # ── Async Nodes ──
