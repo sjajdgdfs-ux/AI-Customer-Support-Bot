@@ -1,28 +1,31 @@
-# TechZone AI Customer Support Agent
+# 🤖 TechZone AI: Production-Ready E-commerce Support Agent
 
-An intelligent AI customer support bot built with LangGraph, Gemini , RAG, and FastAPI.
+A professional AI Customer Support Agent built with **LangGraph**, **Gemini **, and **Streamlit**. This agent handles routine inquiries, searches product catalogs, and includes enterprise-grade security guardrails.
 
-## Features
+🚀 **Live Demo:**[https://ai-customer-support-bot-gkubgfmeimow5j7reeens4.streamlit.app/]
+📺 **Video Demo:** [https://www.loom.com/share/997793f6db154fd9abdb5101bb8a7e35]
 
-- Intent Classification (policy, product, complaint, greeting)
-- RAG-Powered Answers from ChromaDB
-- Security Shield (prompt injection + PII redaction)
-- Async FastAPI Backend
-- Streamlit Chat UI
+## 🌟 Key Features
 
-## Quick Start
+- **Smart RAG (Retrieval-Augmented Generation):** Answers policy questions (returns, shipping) using localized knowledge.
+- **Real-time Product Search:** Connected to a product database to provide stock and pricing info.
+- **Security Shield:** Built-in protection against Prompt Injections and PII data leakage.
+- **Stateful Conversations:** Remembers context using LangGraph's checkpointer.
+- **Fast Performance:** Optimized with caching and instant greeting bypass (< 1s response time).
 
-    pip install -r requirements.txt
-    # Edit .env with your API key
-    python build_kb.py
-    streamlit run ui.py
+## 🛠️ Tech Stack
 
-## Tech Stack
+- **Framework:** LangGraph / LangChain
+- **LLM:** Google Gemini
+- **Frontend:** Streamlit
+- **Vector Store:** ChromaDB
+- **Security:** Custom Regex & LLM-based Guardrails
+- **Deployment:** Docker & Streamlit Cloud
 
-| Layer         | Technology           |
-| ------------- | -------------------- |
-| LLM           | Gemini 3.5 Flash     |
-| Orchestration | LangGraph            |
-| RAG           | LangChain + ChromaDB |
-| Backend       | FastAPI              |
-| Frontend      | Streamlit            |
+## 🚀 How to Run Locally
+
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/ecommerce-ai-agent.git
+   cd ecommerce-ai-agent
+   ```
