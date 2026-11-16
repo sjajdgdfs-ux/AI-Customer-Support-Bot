@@ -1,6 +1,7 @@
-import streamlit as st
 import asyncio
 import os
+
+import streamlit as st
 
 # Set page config
 st.set_page_config(
@@ -49,7 +50,7 @@ if prompt := st.chat_input("Ask a question about products or store policies...")
                 # Run async chat function safely in Streamlit
                 reply = asyncio.run(chat(prompt))
             except Exception as e:
-                reply = f"⚠️ System Error: {str(e)}"
+                reply = f"⚠️ System Error: {e!s}"
 
         st.markdown(reply)
 

@@ -1,17 +1,18 @@
+import asyncio
 import json
 import os
-import asyncio
-from typing import TypedDict, Annotated
+from typing import Annotated, TypedDict
+
 from dotenv import load_dotenv
 
 load_dotenv()
 
-from langgraph.graph import StateGraph, START, END
-from langgraph.graph.message import add_messages
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+from langgraph.graph import END, START, StateGraph
+from langgraph.graph.message import add_messages
 
-from app.rag import search_knowledge, ensure_data_exists
+from app.rag import ensure_data_exists, search_knowledge
 from app.security import SecurityShield
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
