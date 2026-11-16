@@ -2,8 +2,10 @@
 Tests for AI Agent Tools
 """
 import json
+
 import pytest
-from app.agent import search_products_fast, extract_text
+
+from app.agent import extract_text, search_products_fast
 
 
 class TestRealTools:

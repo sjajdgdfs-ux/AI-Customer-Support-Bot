@@ -4,6 +4,7 @@ Tests: Text Extraction, Fast Product Search, Security Block, Instant Greeting, P
 """
 import json
 from unittest.mock import AsyncMock, patch
+
 import pytest
 from langchain_core.messages import AIMessage
 from langchain_google_genai import ChatGoogleGenerativeAI

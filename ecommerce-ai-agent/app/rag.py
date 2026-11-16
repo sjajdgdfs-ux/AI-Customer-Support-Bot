@@ -1,7 +1,7 @@
 import json
 import os
 from functools import lru_cache
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 from langchain_chroma import Chroma
 from langchain_core.documents import Document

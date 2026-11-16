@@ -1,7 +1,8 @@
 import os
-import streamlit as st
-import requests
 import uuid
+
+import requests
+import streamlit as st
 
 # Environment variables injected by Docker Compose
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000/api/v1/chat")
@@ -16,7 +17,7 @@ if "access_token" not in st.session_state:
     try:
         res = requests.get(TOKEN_URL, timeout=5)
         st.session_state.access_token = res.json()["access_token"]
-    except Exception as e:
+    except Exception:
         st.error(f"Cannot connect to Backend service at {TOKEN_URL}")
         st.stop()
 
@@ -56,7 +57,7 @@ if prompt := st.chat_input("Ask about products or store policies..."):
                 else:
                     reply = f"⚠️ Server Error ({response.status_code}): {response.text}"
             except Exception as e:
-                reply = f"❌ Network Connection Error: {str(e)}"
+                reply = f"❌ Network Connection Error: {e!s}"
         st.markdown(reply)
 
     st.session_state.messages.append({"role": "assistant", "content": reply})

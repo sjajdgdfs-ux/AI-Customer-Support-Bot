@@ -3,12 +3,12 @@ Unit Tests for app/rag.py
 Tests: Data Existence, Embeddings Model, Knowledge Base Creation, Vector Search
 """
 import os
+
 import pytest
 
 from app.rag import (
     ensure_data_exists,
     get_embeddings,
-    get_vector_store,
     search_knowledge,
 )
 

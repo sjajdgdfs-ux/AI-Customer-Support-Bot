@@ -5,6 +5,7 @@ os.environ["ENVIRONMENT"] = "testing"
 
 import time
 from unittest.mock import AsyncMock, patch
+
 import jwt as pyjwt
 import pytest
 from httpx import ASGITransport, AsyncClient
